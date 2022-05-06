@@ -1,0 +1,42 @@
+<html>
+<head>
+    {{>header}}
+</head>
+
+{{>navbar}}
+
+<body>
+    <h1>{{title}}</h1>
+
+   
+    <div class="pt-5 grid-flow-row box-content text-center ">
+        <h2 class="text-2xl mt-10">Staff Login Area</h2>
+    <div id="formContent">
+        <form method="POST" role="/login">
+        <div class="bg-stone-50 mb-48 rounded pt-10 pb-8 flex flex-col px-96">
+            <div class="mb-4">
+              <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
+                Username
+              </label>
+              <input class="border-2 w-full py-2 px-3 text-grey-darker" type="text" id="username" name="username" placeholder="username">
+            </div>
+            <div class="mb-6">
+              <label class="block text-grey-darker text-sm font-bold mb-2" for="password">
+                Password
+              </label>
+              <input class="border-2 w-full py-2 px-3 text-grey-darker mb-3" type="password" id="password" name="password"placeholder="password">
+            </div>
+            <div class="items-center justify-between">
+                <input type="submit" value="Sign In" class="bg-green-600 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+            </div>
+        </form>
+        </div>
+    </div>
+   
+</body>
+
+{{>footer}}
+
+</html>
+
+

@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+{{>header}}
+</head>
+
+{{>staffNavbar}}
+
+<body>
+
+<div class="grid-flow-row box-content text-center mx pt-14">
+<h2 class="font-thin text-7xl">Enter New Menu Item</h2>
+
+<form method="post" role="form" action="/new">
+
+
+<div class="pt-10">
+
+<label for="dish_Name" for="contents" class="block text-grey-darker text-sm font-bold mb-2" >Dish Name</label>
+<input type="text" class="border-2 w-96 py-2 px-3 text-grey-darker mb-3" id="dish_Name"
+name="dish_Name" placeholder="Dish Name"
+required>
+
+</div>
+
+<div class="pt-5">
+  <label for="subject" for="contents" class="block text-grey-darker text-sm font-bold mb-2" >Menu</label>
+  <select type="checkbox" class="border-2 w-96 py-2 px-3 text-grey-darker mb-3" id="menu"
+  name="menu" placeholder="menu"
+  required>
+  <option value="lunch">Lunch Menu</option>
+  <option value="dinner">Dinner Menu</option>
+  </select>
+  </div>
+
+<div class="pt-5">
+
+  <label for="chef_special" for="contents" class="block text-grey-darker text-sm font-bold mb-2" >Chef Special</label>
+    <select class="border-2 w-96 py-2 px-3 text-grey-darker mb-3" id="chef_Special" name="chef_Special"
+    name="Chef Special" placeholder="Chef Special" required>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+    </select>
+    </div>
+  
+
+
+
+<div class="pt-5">
+<label for="contents" class="block text-grey-darker text-sm font-bold mb-2"  >Description</label>
+<textarea class="border-2 w-96 py-2 px-3 text-grey-darker mb-3" id="description" name="description"
+placeholder="Enter Dish Description" rows="3"
+required>
+</textarea>
+</div>
+
+
+<div class="pt-5">
+<label for="dish_Name" for="contents" class="block text-grey-darker text-sm font-bold mb-2" >Allergen Advice</label>
+<input type="text" class="border-2 w-96 py-2 px-3 text-grey-darker mb-3" id=" allergen_Advice"
+name="allergen_Advice" placeholder="Allergen Advice"
+required>
+</div>
+
+<div class="pt-5">
+<label for="price" class="block text-grey-darker text-sm font-bold mb-2" >Price</label>
+<input type="number" class="border-2 w-96 py-2 px-3 text-grey-darker mb-3" id="price"
+name="price" placeholder="Price (do not include £)"
+required>
+</div>
+
+<div class="pt-5">
+
+  <label for="show_Item" for="contents" class="block text-grey-darker text-sm font-bold mb-2" >Show Item</label>
+
+  <select class="border-2 w-96 py-2 px-3 text-grey-darker mb-3" id="show_Item"
+  name="show_Item" placeholder="Show Item" required>
+  <option value="show">Show Item</option>
+  <option value="hide">Hide Item</option>
+  </select>
+  </div>
+  
+  
+
+
+<div class="pt-5 mb-10">
+<input type="submit" value="Post Entry" class="bg-green-600 hover:bg-green-600 text-white py-4 px-4 rounded font-thin">
+</div>
+
+</form>
+</div>
+</body>
+</html>

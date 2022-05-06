@@ -1,0 +1,182 @@
+<html>
+
+<head>
+  {{>header}}
+</head>
+
+{{>staffNavbar}}
+
+<body>
+
+
+  <div
+    class="pt-28 grid-flow-row mb-28 box-content text-center font-thin lg:text-8xl md:text-7xl text-6xl lg:mx-96 md:mx-52 sm:mx-10">
+    Menu
+
+  </div>
+
+  <div
+    class="pt-5 grid-flow-row mb-14 box-content text-center font-thin lg:text-4xl md:text-2xl text-xl lg:mx-96 md:mx-52 sm:mx-10">
+    Shown Items
+  </div>
+
+  {{#shownentries}}
+
+  <div class="inline-block ml-14 mr-10 mt-14">
+
+    <div class="card-body">
+      <h4 class="font-light text-xl pb-3">{{dish_Name}}</h4>
+      <p class="font-light italic text-base">
+        {{description}}
+      </p>
+      <div class="font-light text-sm mt-2">
+
+        Allergen Advice: {{allergen_Advice}}
+      </div>
+      <div class="mt-3 pb-3 font-light">
+        £{{price}}
+      </div>
+      <div class="text-sm font-light">
+          Staff Info
+          <p></p>
+          ----------
+      </div>
+
+      <div class="font-light text-base mt-2">
+        Chef Special: {{chef_Special}}
+      </div>
+     
+      <div class="font-light text-base mt-2">
+        Menu: {{menu}}
+      </div>
+
+
+      <form action="/update" method="POST">
+      
+      <select hidden class="font-light border-2" id="showItemChanger" name="showItemChanger">
+        <option selected value="hide">Hide</option>
+      </select>
+
+      <select hidden class="mt-0 font-light" id="id" name="id">
+        <option value="{{_id}}">ID
+        <option>
+      </select>
+
+
+      <div class="pt-3 mb-1">
+        <input type="submit" value="Hide Item"
+          class="bg-green-600 hover:bg-green-600 text-white py-3 px-3 rounded font-thin">
+      </div>
+      </form>
+
+
+      <form action="/delete" method="POST">
+
+        <select hidden class="mt-0 font-light" id="id" name="id">
+          <option value="{{_id}}">ID
+          <option>
+        </select>
+    </div>
+    <div class="mt-3 font-light">
+      <div class="pt-1 mb-2">
+        <input type="submit" value="Delete Item"
+          class="bg-green-600 hover:bg-green-600 text-white py-3 px-3 rounded font-thin">
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+  </div>
+
+  {{/shownentries}}
+
+  <div
+    class="pt-20 grid-flow-row mb-14 box-content text-center font-thin lg:text-4xl md:text-2xl text-xl lg:mx-96 md:mx-52 sm:mx-10">
+    Hidden Items
+  </div>
+
+
+  {{#hiddenentries}}
+
+  <div class="inline-block ml-14 mr-10 mt-14">
+
+    <div class="card-body">
+      <h4 class="font-light text-xl pb-3">{{dish_Name}}</h4>
+      <p class="font-light italic text-base">
+        {{description}}
+      </p>
+      <div class="font-light text-sm mt-2">
+
+        Allergen Advice: {{allergen_Advice}}
+      </div>
+      <div class="mt-3 pb-3 font-light">
+        £{{price}}
+      </div>
+      <div class="text-sm font-light">
+          Staff Info
+          <p></p>
+          ----------
+      </div>
+
+      <div class="font-light text-base mt-2">
+        Chef Special: {{chef_Special}}
+      </div>
+     
+      <div class="font-light text-base mt-2">
+        Menu: {{menu}}
+      </div>
+
+
+      <form action="/update" method="POST">
+      
+      <select hidden class="font-light border-2" id="showItemChanger" name="showItemChanger">
+        <option selected value="show">Show</option>
+      </select>
+
+      <select hidden class="mt-0 font-light" id="id" name="id">
+        <option value="{{_id}}">ID
+        <option>
+      </select>
+
+
+      <div class="pt-3 mb-1">
+        <input type="submit" value="Show Item"
+          class="bg-green-600 hover:bg-green-600 text-white py-3 px-3 rounded font-thin">
+      </div>
+
+      </form>
+
+
+      <form action="/delete" method="POST">
+
+        <select hidden class="mt-0 font-light" id="id" name="id">
+          <option value="{{_id}}">ID
+          <option>
+        </select>
+    </div>
+    <div class="mt-3 font-light">
+      <div class="mb-2">
+        <input type="submit" value="Delete Item"
+          class="bg-green-600 hover:bg-green-600 text-white py-3 px-3 rounded font-thin">
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+  </div>
+
+  {{/hiddenentries}}
+
+
+
+
+
+
+</body>
+<div class="mt-36">
+  {{>footer}}
+</div>
+
+</html>

@@ -1,0 +1,88 @@
+<html><head>
+    {{>header}}
+    </head>
+    
+    {{>navbar}}
+    
+    <body>
+    
+       
+      <div class="pt-28 grid-flow-row mb-28 box-content text-center font-thin lg:text-8xl md:text-7xl text-6xl lg:mx-96 md:mx-52 sm:mx-10">
+       Dinner Menu
+    
+        </div>
+
+
+        <div class="pt-5 grid-flow-row mb-14 box-content text-center font-thin lg:text-4xl md:text-2xl text-xl lg:mx-96 md:mx-52 sm:mx-10">
+          Chef Specials
+           </div>
+        
+
+        {{#chefentries}}
+    <div class="inline-block ml-24 mr-10 mt-5 mb-5">
+      <div class="card-body">
+        <h4 class="font-light text-xl pb-3">{{dish_Name}}</h4>
+        <p class="font-light italic text-base">
+          {{description}}
+         </p>
+         <div class="font-light text-sm mt-2">
+          
+         Allergen Advice: {{allergen_Advice}}
+         </div>
+    <div class="mt-3 font-light">
+    £{{price}}
+    </div>
+    </div>
+    </div>
+    
+    {{/chefentries}}
+    {{^chefentries}}
+
+    <div class="pt-2 mt-7 grid-flow-row mb-28 box-content text-center font-thin lg:text-4xl md:text-2xl text-xl lg:mx-96 md:mx-52 sm:mx-10">
+    !No items to display!
+    </div>  
+    
+    {{/chefentries}}
+
+
+
+    
+    <div class="pt-5 mt-7 grid-flow-row mb-28 box-content text-center font-thin lg:text-4xl md:text-2xl text-xl lg:mx-96 md:mx-52 sm:mx-20 px-12">
+      <P class="border-2 fill-black"></P>
+      </div>  
+      <div class="pt-2 mt-7 grid-flow-row mb-28 box-content text-center font-thin lg:text-4xl md:text-2xl text-xl lg:mx-96 md:mx-52 sm:mx-10">
+      Main Menu
+       </div>
+    
+    {{#entries}}
+    <div class="inline-block ml-24 mr-10 mt-5">
+      <div class="card-body">
+        <h4 class="font-light text-xl pb-3">{{dish_Name}}</h4>
+        <p class="font-light italic text-base">
+          {{description}}
+         </p>
+         <div class="font-light text-sm mt-2">
+          
+         Allergen Advice: {{allergen_Advice}}
+         </div>
+    <div class="mt-3 font-light">
+    £{{price}}
+    </div>
+    </div>
+    </div>
+    
+    {{/entries}}
+    
+    {{^entries}}
+
+    <div class="pt-2 mt-7 grid-flow-row mb-28 box-content text-center font-thin lg:text-4xl md:text-2xl text-xl lg:mx-96 md:mx-52 sm:mx-10">
+    !No items to display!
+    </div>  
+
+    {{/entries}}
+    </body>
+    <div class="mt-36">
+    {{>footer}}
+    </div>  
+    
+    </html>
